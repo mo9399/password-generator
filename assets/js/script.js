@@ -3,6 +3,8 @@ var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var lowerCasedCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var upperCasedCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var chosencharacters = "";
+var result = "";
 
 // generate password
 function generatePassword() {
@@ -12,16 +14,16 @@ function generatePassword() {
     console.log("The lenght is" + length);
 
   if (length >= 8 && length <= 128) {
-    var lowercase = confirm("Would you like to include lowercase characters?");
+    var lowercase = confirm("Would you like to include lowercase characters? Click OK for yes and Cancel for No.");
     console.log("Lowercase = " + lowercase);
 
-    var uppercase = confirm("Would you like to include uppercase characters?");
+    var uppercase = confirm("Would you like to include uppercase characters? Click OK for yes and Cancel for No.");
     console.log("Uppercase = " + uppercase);
 
-    var special = confirm("Would you like to include special characters?");
+    var special = confirm("Would you like to include special characters? Click OK for yes and Cancel for No.");
     console.log("Special Characters = " + special);
 
-    var numbers = confirm("Would you like to include numbers?");
+    var numbers = confirm("Would you like to include numbers? Click OK for yes and Cancel for No.");
     console.log("Numbers = " + numbers);
 
   //Alert if nothing is selected
@@ -47,7 +49,7 @@ function generatePassword() {
 
   //Generate password with chosen characters
   for (var i = 0; i < length; i++) {
-    result += chosencharacters(Math.floor(Math.random() * chosencharacters.length));
+    result += chosencharacters.charAt(Math.floor(Math.random() * chosencharacters.length));
   }
   
  // Show password on page
